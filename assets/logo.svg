@@ -1,37 +1,96 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 200">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#FF2442;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#FF6B81;stop-opacity:1" />
+    <linearGradient id="safeguard" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF2442;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#FF6B81;stop-opacity:0.6"/>
     </linearGradient>
-    <linearGradient id="loop" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#FFD93D;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#FF8C00;stop-opacity:1" />
+    <linearGradient id="cultivate" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#FFD93D;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#FFEB85;stop-opacity:0.6"/>
     </linearGradient>
+    <linearGradient id="evaluate" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#36A2EB;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#7EC8F3;stop-opacity:0.6"/>
+    </linearGradient>
+    <linearGradient id="agent-glow" x1="50%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.1"/>
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:0.9"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
-  <!-- Background pill -->
-  <rect x="0" y="0" width="480" height="120" rx="16" fill="#1a1a2e"/>
-  <!-- Loop icon -->
-  <g transform="translate(28, 24)">
-    <!-- Outer ring -->
-    <circle cx="36" cy="36" r="30" fill="none" stroke="url(#bg)" stroke-width="5"/>
-    <!-- Arrow head on ring -->
-    <polygon points="60,18 66,30 54,30" fill="url(#bg)" transform="rotate(-15, 60, 24)"/>
-    <!-- Inner pulse -->
-    <circle cx="36" cy="36" r="12" fill="url(#bg)" opacity="0.3"/>
-    <circle cx="36" cy="36" r="6" fill="url(#bg)"/>
+
+  <!-- Background -->
+  <rect width="520" height="200" rx="16" fill="#0d1117"/>
+
+  <!-- === Left: Three pillars cradling the Agent === -->
+  <g transform="translate(30, 20)">
+    <!-- Base platform -->
+    <rect x="10" y="148" width="140" height="4" rx="2" fill="#222" opacity="0.6"/>
+
+    <!-- Pillar 1: 保障 (left, red) — foundation/shield -->
+    <rect x="12" y="58" width="28" height="94" rx="4" fill="url(#safeguard)" opacity="0.85"/>
+    <text x="26" y="100" font-family="system-ui, sans-serif" font-size="9" fill="#fff" text-anchor="middle" font-weight="600" writing-mode="tb">保障</text>
+
+    <!-- Pillar 2: 培养 (middle-back, yellow) — tallest, growth -->
+    <rect x="56" y="28" width="48" height="124" rx="4" fill="url(#cultivate)" opacity="0.8"/>
+    <text x="80" y="78" font-family="system-ui, sans-serif" font-size="9" fill="#665500" text-anchor="middle" font-weight="600" writing-mode="tb">培养</text>
+
+    <!-- Pillar 3: 评价 (right, blue) — measuring -->
+    <rect x="120" y="58" width="28" height="94" rx="4" fill="url(#evaluate)" opacity="0.85"/>
+    <text x="134" y="100" font-family="system-ui, sans-serif" font-size="9" fill="#fff" text-anchor="middle" font-weight="600" writing-mode="tb">评价</text>
+
+    <!-- The Agent figure — growing upward between pillars -->
+    <g filter="url(#glow)">
+      <!-- Body -->
+      <ellipse cx="80" cy="130" rx="14" ry="18" fill="url(#agent-glow)" opacity="0.15"/>
+      <!-- Head -->
+      <circle cx="80" cy="108" r="10" fill="none" stroke="#fff" stroke-width="2" opacity="0.9"/>
+      <!-- Eyes (awake, smart) -->
+      <circle cx="76.5" cy="107" r="1.5" fill="#fff" opacity="0.9"/>
+      <circle cx="83.5" cy="107" r="1.5" fill="#fff" opacity="0.9"/>
+      <!-- Body line -->
+      <line x1="80" y1="118" x2="80" y2="142" stroke="#fff" stroke-width="2" opacity="0.7"/>
+      <!-- Arms reaching to pillars -->
+      <line x1="80" y1="126" x2="62" y2="118" stroke="#fff" stroke-width="1.5" opacity="0.5"/>
+      <line x1="80" y1="126" x2="98" y2="118" stroke="#fff" stroke-width="1.5" opacity="0.5"/>
+      <!-- Upward spark / growth indicator -->
+      <line x1="80" y1="96" x2="80" y2="86" stroke="#FFD93D" stroke-width="1.5" opacity="0.7"/>
+      <line x1="75" y1="91" x2="80" y2="84" stroke="#FFD93D" stroke-width="1" opacity="0.5"/>
+      <line x1="85" y1="91" x2="80" y2="84" stroke="#FFD93D" stroke-width="1" opacity="0.5"/>
+    </g>
+
+    <!-- Loop arrows around agent (the auto-loop) -->
+    <path d="M 52,135 A 32,20 0 0,1 108,135" fill="none" stroke="#888" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>
+    <path d="M 108,125 A 32,20 0 0,1 52,125" fill="none" stroke="#888" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>
+    <!-- Arrow tips -->
+    <polygon points="108,135 104,131 106,137" fill="#888" opacity="0.4"/>
+    <polygon points="52,125 56,129 54,123" fill="#888" opacity="0.4"/>
   </g>
-  <!-- Title -->
-  <text x="110" y="52" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="#FFFFFF" letter-spacing="-0.5">xhs-autoloop</text>
-  <!-- Subtitle -->
-  <text x="110" y="78" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#888888">Autonomous Content Engine for Xiaohongshu</text>
-  <!-- Three pillars -->
-  <g transform="translate(110, 90)">
-    <rect x="0" y="0" width="56" height="20" rx="10" fill="#FF2442" opacity="0.15"/>
-    <text x="28" y="14" font-family="system-ui, sans-serif" font-size="11" fill="#FF2442" text-anchor="middle" font-weight="600">保障</text>
-    <rect x="66" y="0" width="56" height="20" rx="10" fill="#FFD93D" opacity="0.15"/>
-    <text x="94" y="14" font-family="system-ui, sans-serif" font-size="11" fill="#FFD93D" text-anchor="middle" font-weight="600">培养</text>
-    <rect x="132" y="0" width="56" height="20" rx="10" fill="#36A2EB" opacity="0.15"/>
-    <text x="160" y="14" font-family="system-ui, sans-serif" font-size="11" fill="#36A2EB" text-anchor="middle" font-weight="600">评价</text>
+
+  <!-- === Right: Text === -->
+  <g transform="translate(210, 0)">
+    <!-- Title -->
+    <text x="0" y="72" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="800" fill="#FFFFFF" letter-spacing="-1">xhs-autoloop</text>
+
+    <!-- Subtitle -->
+    <text x="0" y="100" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#8b949e">Autonomous Content Engine for Xiaohongshu</text>
+
+    <!-- Tagline -->
+    <text x="0" y="128" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#58a6ff" opacity="0.8">Powered by Claude Code + MCP</text>
+
+    <!-- Three pillar badges -->
+    <g transform="translate(0, 145)">
+      <rect x="0" y="0" width="66" height="24" rx="12" fill="#FF2442" opacity="0.15" stroke="#FF2442" stroke-width="0.5" stroke-opacity="0.3"/>
+      <text x="33" y="16" font-family="system-ui, sans-serif" font-size="11" fill="#FF6B81" text-anchor="middle" font-weight="600">Safeguard</text>
+
+      <rect x="78" y="0" width="66" height="24" rx="12" fill="#FFD93D" opacity="0.15" stroke="#FFD93D" stroke-width="0.5" stroke-opacity="0.3"/>
+      <text x="111" y="16" font-family="system-ui, sans-serif" font-size="11" fill="#FFD93D" text-anchor="middle" font-weight="600">Cultivate</text>
+
+      <rect x="156" y="0" width="66" height="24" rx="12" fill="#36A2EB" opacity="0.15" stroke="#36A2EB" stroke-width="0.5" stroke-opacity="0.3"/>
+      <text x="189" y="16" font-family="system-ui, sans-serif" font-size="11" fill="#7EC8F3" text-anchor="middle" font-weight="600">Evaluate</text>
+    </g>
   </g>
 </svg>
