@@ -1,0 +1,117 @@
+{
+  "_comment": "XHS AutoLoop 配置文件 — 复制为 config.json 后编辑",
+
+  "tracked_posts": [
+    "在这里填入你已发布的帖子标题",
+    "Agent 会追踪这些帖子的赞藏数据"
+  ],
+
+  "content_categories": {
+    "A": {
+      "name": "官方薅羊毛 / 免费额度",
+      "description": "各平台官方免费额度、学生优惠、开源项目 credits 等。仅限官方渠道，禁止推荐第三方中转站或代理。",
+      "sources": [
+        "https://hacker-news.firebaseio.com/v0/topstories.json"
+      ],
+      "examples": [
+        "Claude免费额度怎么最大化",
+        "GitHub Copilot学生包申请全流程",
+        "Google AI Studio免费用Gemini",
+        "各家API免费tier对比"
+      ]
+    },
+    "B": {
+      "name": "AI 工具实战对比",
+      "description": "主流 AI 工具的真实使用对比和测评，要有实际体验，不能只抄参数表。",
+      "sources": [
+        "https://hacker-news.firebaseio.com/v0/topstories.json"
+      ],
+      "examples": [
+        "Claude vs GPT 写代码实测",
+        "Cursor vs Windsurf 哪个更值",
+        "本地模型 vs API 性价比"
+      ]
+    },
+    "C": {
+      "name": "AI 编程技巧",
+      "description": "Claude Code、Cursor、Copilot 等 AI 编程工具的实用技巧和进阶用法。",
+      "sources": [
+        "https://hacker-news.firebaseio.com/v0/topstories.json"
+      ],
+      "examples": [
+        "Claude Code 新功能速览",
+        "MCP 实战教程",
+        "AI 编程 Agent 模式进阶"
+      ]
+    },
+    "D": {
+      "name": "AI 热点速报",
+      "description": "AI 领域的重大发布、新模型、重要新闻的第一手解读。",
+      "sources": [
+        "https://hacker-news.firebaseio.com/v0/topstories.json"
+      ],
+      "examples": [
+        "某模型刚发布的第一手体验",
+        "重大政策变化解读",
+        "开源模型新突破"
+      ]
+    },
+    "E": {
+      "name": "效率工具 / 开发者生活",
+      "description": "值得推荐的工具、项目、生产力提升方法。",
+      "sources": [
+        "https://api.github.com/search/repositories?q=created:>2026-03-23&sort=stars&order=desc"
+      ],
+      "examples": [
+        "GitHub 上值得收藏的 AI 项目",
+        "终端效率工具推荐",
+        "开发者必备浏览器插件"
+      ]
+    },
+    "F": {
+      "name": "AI 学习路径 / 入门指南",
+      "description": "面向新手的实用入门教程和学习路线。",
+      "sources": [],
+      "examples": [
+        "零基础用上 AI 编程助手",
+        "Prompt Engineering 实用模板",
+        "如何用 AI 辅助论文写作"
+      ]
+    }
+  },
+
+  "style": {
+    "tone": "口语化、有温度、像朋友在分享经验，不是教程机器人",
+    "title_max_chars": 15,
+    "body_max_chars": 900,
+    "use_emoji": true,
+    "language": "zh-CN",
+    "extra_instructions": ""
+  },
+
+  "schedule": {
+    "interval_hours": 4,
+    "retry_minutes": 30,
+    "mission_days": 7,
+    "max_timeout_seconds": 1800
+  },
+
+  "rules": {
+    "no_markdown": true,
+    "no_real_names": true,
+    "must_verify_after_publish": true,
+    "must_curl_sources": true,
+    "no_third_party_proxy": true
+  },
+
+  "claude": {
+    "model": "sonnet",
+    "api_base_url": "",
+    "api_key": "",
+    "extra_env": {}
+  },
+
+  "mcp": {
+    "xiaohongshu_url": "http://localhost:18060/mcp"
+  }
+}

@@ -1,0 +1,10 @@
+# Runtime data
+data/mission.json
+data/metrics.jsonl
+data/mission.log
+
+# User config (has API keys)
+config/config.json
+
+# OS
+.DS_Store

@@ -1,0 +1,5 @@
+# xhs-autoloop data directory
+# 运行时数据自动生成：
+# - mission.json: 当前 mission 状态
+# - metrics.jsonl: 每轮帖子数据
+# - mission.log: 运行日志
